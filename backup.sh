@@ -1,6 +1,7 @@
 . ./install.sh
-python backup.py --bucket=ntree-infrastructure-backup-ca --bucket-region=ca-central-1 \
+. ./config.sh
+python backup.py --bucket=${backup_bucket_name} --bucket-region=${backup_bucket_region} \
        create --include-archive --include-builds --include-logs --exclude-workspace
-python backup.py --bucket=ntree-infrastructure-backup-ca --bucket-region=ca-central-1 \
+python backup.py --bucket=${backup_bucket_name} --bucket-region=${backup_bucket_region} \
        prune 7
 

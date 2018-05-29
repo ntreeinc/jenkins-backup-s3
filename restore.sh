@@ -1,2 +1,3 @@
 . ./install.sh
-python backup.py --bucket=ntree-infrastructure-backup --bucket-region=us-east-1 restore latest
+. ./config.sh
+python backup.py --bucket=${backup_bucket_name} --bucket-region=${backup_bucket_region} restore latest
