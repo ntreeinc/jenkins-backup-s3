@@ -1,7 +1,7 @@
-folder('backups') {
-    description('jenkins backup jobs')
+folder('Operations') {
+    description('Administrative jobs')
 }
-job('backups/jenkins-restore') {
+job('Operations/jenkins-restore') {
     scm {
         git {
           remote {
@@ -15,7 +15,7 @@ job('backups/jenkins-restore') {
         dsl('jenkins.model.Jenkins.instance.doReload()')
     }
 }
-job('backups/jenkins-backup') {
+job('Operations/jenkins-backup') {
     triggers {
         cron('@midnight')
     }
