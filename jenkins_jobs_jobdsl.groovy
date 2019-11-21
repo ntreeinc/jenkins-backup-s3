@@ -16,6 +16,9 @@ job('backups/jenkins-restore') {
     }
 }
 job('backups/jenkins-backup') {
+    triggers {
+        cron('@daily')
+    }
     scm {
         git {
           remote {
