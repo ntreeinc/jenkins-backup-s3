@@ -13,7 +13,7 @@ pipeline {
         stage("Create jobs") {
             when { branch 'master' } // don't create multiple copies for branches
             steps {
-                jobDsl targets: './backup_job_definitions-jobdsl.groovy'
+                jobDsl targets: './jenkins_jobs_jobdsl.groovy'
             }
         }
     }
