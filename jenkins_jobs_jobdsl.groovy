@@ -16,6 +16,9 @@ job('Operations/jenkins-restore') {
     }
 }
 job('Operations/jenkins-backup') {
+    options {
+        buildDiscarder(logRotator(numToKeepStr:'10'))
+    }
     triggers {
         cron('@midnight')
     }
